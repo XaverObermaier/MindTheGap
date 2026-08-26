@@ -1,0 +1,9 @@
+[
+  { "id": "war", "label": "War / Conflict", "color": "#c0392b" },
+  { "id": "hunger", "label": "Hunger / Famine", "color": "#e67e22" },
+  { "id": "poverty", "label": "Poverty", "color": "#8e44ad" },
+  { "id": "disaster", "label": "Natural Disasters", "color": "#16a085" },
+  { "id": "health", "label": "Health", "color": "#2980b9" },
+  { "id": "climate", "label": "Climate", "color": "#27ae60" },
+  { "id": "education", "label": "Education", "color": "#b8860b" }
+]

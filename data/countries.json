@@ -1,0 +1,42 @@
+[
+  {
+    "code": "SDN",
+    "name": "Sudan",
+    "region": "East Africa",
+    "population": "48.1 million",
+    "needIndex": 5,
+    "categories": ["hunger", "war"],
+    "summary": "Sudan is facing one of the world's largest displacement and food security crises, driven by ongoing conflict and a collapsing economy.",
+    "image": "assets/images/sudan.jpg"
+  },
+  {
+    "code": "KEN",
+    "name": "Kenya",
+    "region": "East Africa",
+    "population": "55.1 million",
+    "needIndex": 3,
+    "categories": ["climate", "hunger"],
+    "summary": "Recurring drought cycles in Kenya's arid and semi-arid regions continue to threaten food security and rural livelihoods.",
+    "image": "assets/images/kenya.jpg"
+  },
+  {
+    "code": "YEM",
+    "name": "Yemen",
+    "region": "Middle East",
+    "population": "34.4 million",
+    "needIndex": 5,
+    "categories": ["war", "hunger"],
+    "summary": "Years of conflict in Yemen have driven one of the world's largest humanitarian emergencies, with millions facing acute food insecurity.",
+    "image": "assets/images/yemen.jpg"
+  },
+  {
+    "code": "HTI",
+    "name": "Haiti",
+    "region": "Caribbean",
+    "population": "11.7 million",
+    "needIndex": 4,
+    "categories": ["health", "disaster"],
+    "summary": "Gang violence, disease outbreaks and natural disasters continue to strain Haiti's health system and displace communities.",
+    "image": "assets/images/haiti.jpg"
+  }
+]

@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "title": "Sudan's growing food crisis",
+    "category": "hunger",
+    "country": "Sudan",
+    "countryCode": "SDN",
+    "lat": 15.5007,
+    "lng": 32.5599,
+    "summary": "Conflict and economic collapse have pushed millions of people in Sudan into acute food insecurity, with famine conditions confirmed in parts of the country.",
+    "date": "2026-08-26",
+    "image": "assets/images/sudan.jpg",
+    "source": "Example Source",
+    "sourceUrl": "#"
+  },
+  {
+    "id": 2,
+    "title": "Drought threatens communities in Kenya",
+    "category": "climate",
+    "country": "Kenya",
+    "countryCode": "KEN",
+    "lat": -1.2921,
+    "lng": 36.8219,
+    "summary": "Consecutive failed rainy seasons have left pastoral communities in northern Kenya without reliable access to water and grazing land.",
+    "date": "2026-08-25",
+    "image": "assets/images/kenya.jpg",
+    "source": "Example Source",
+    "sourceUrl": "#"
+  },
+  {
+    "id": 3,
+    "title": "Conflict deepens Yemen's humanitarian emergency",
+    "category": "war",
+    "country": "Yemen",
+    "countryCode": "YEM",
+    "lat": 15.3694,
+    "lng": 44.191,
+    "summary": "Ongoing conflict continues to disrupt access to food, clean water and medical care for millions of people across Yemen.",
+    "date": "2026-08-24",
+    "image": "assets/images/yemen.jpg",
+    "source": "Example Source",
+    "sourceUrl": "#"
+  },
+  {
+    "id": 4,
+    "title": "Cholera outbreak strains Haiti's health system",
+    "category": "health",
+    "country": "Haiti",
+    "countryCode": "HTI",
+    "lat": 18.5944,
+    "lng": -72.3074,
+    "summary": "A resurgence of cholera cases is overwhelming already fragile health infrastructure amid ongoing insecurity in Haiti.",
+    "date": "2026-08-23",
+    "image": "assets/images/haiti.jpg",
+    "source": "Example Source",
+    "sourceUrl": "#"
+  }
+]

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Take Action — Mind the Gap</title>
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/components.css">
+</head>
+<body data-page="take-action">
+  <div data-include="header"></div>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <h1>Take Action</h1>
+          <p>Understanding a crisis is the first step. Here are concrete ways to get involved.</p>
+        </div>
+
+        <div class="supporter-widget">
+          <div class="avatar-frame" id="avatar-frame"><span>MTG</span></div>
+          <div>
+            <button type="button" class="btn btn-primary" id="supporter-toggle">Become a Supporter</button>
+            <p class="state-message" id="supporter-status"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-header">
+          <h2 id="orgs-heading">Organizations you can support</h2>
+          <p>Curated by our team today; these links go straight to each organization's own site.</p>
+        </div>
+        <div id="orgs-grid" class="card-grid">
+          <p class="state-message">Loading organizations...</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div data-include="footer"></div>
+
+  <script type="module" src="../js/main.js"></script>
+  <script type="module" src="../js/pages/takeAction.js"></script>
+</body>
+</html>

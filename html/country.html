@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Country — Mind the Gap</title>
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/components.css">
+</head>
+<body data-page="countries">
+  <div data-include="header"></div>
+
+  <main>
+    <section class="section detail-header">
+      <div id="country-detail" class="container">
+        <p class="state-message">Loading country...</p>
+      </div>
+    </section>
+
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-header">
+          <h2>Related issues</h2>
+        </div>
+        <div id="related-issues" class="card-grid"></div>
+      </div>
+    </section>
+  </main>
+
+  <div data-include="footer"></div>
+
+  <script type="module" src="../js/main.js"></script>
+  <script type="module" src="../js/pages/countryDetail.js"></script>
+</body>
+</html>

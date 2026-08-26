@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>News — Mind the Gap</title>
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/components.css">
+</head>
+<body data-page="issues">
+  <div data-include="header"></div>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <h1>News</h1>
+          <p>Browse current humanitarian and development news by category.</p>
+        </div>
+        <div id="category-filter" class="filter-bar"></div>
+        <div id="issues-grid" class="card-grid">
+          <p class="state-message">Loading issues...</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div data-include="footer"></div>
+
+  <script type="module" src="../js/main.js"></script>
+  <script type="module" src="../js/pages/issues.js"></script>
+</body>
+</html>

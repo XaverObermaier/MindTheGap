@@ -1,0 +1,37 @@
+[
+  {
+    "id": "oxfam",
+    "name": "Oxfam",
+    "description": "A global movement of people fighting inequality to end poverty and injustice, working across nearly every category of crisis.",
+    "url": "https://www.oxfam.org",
+    "categories": ["war", "hunger", "poverty", "disaster", "health", "climate", "education"]
+  },
+  {
+    "id": "wfp",
+    "name": "World Food Programme",
+    "description": "The UN agency delivering food assistance and working to tackle hunger and famine worldwide.",
+    "url": "https://www.wfp.org",
+    "categories": ["hunger", "poverty"]
+  },
+  {
+    "id": "unhcr",
+    "name": "UNHCR",
+    "description": "The UN Refugee Agency, supporting people forcibly displaced by conflict and persecution.",
+    "url": "https://www.unhcr.org",
+    "categories": ["war"]
+  },
+  {
+    "id": "who",
+    "name": "World Health Organization",
+    "description": "Coordinates the global response to health emergencies and outbreaks.",
+    "url": "https://www.who.int",
+    "categories": ["health"]
+  },
+  {
+    "id": "redcross",
+    "name": "International Red Cross",
+    "description": "Provides emergency relief and support to communities affected by conflict and natural disasters.",
+    "url": "https://www.icrc.org",
+    "categories": ["war", "disaster"]
+  }
+]

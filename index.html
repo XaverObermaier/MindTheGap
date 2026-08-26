@@ -1,1 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mind the Gap — Understand global inequality, take action</title>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css">
+</head>
+<body data-page="index">
+  <div data-include="header"></div>
 
+  <main>
+    <section class="hero container">
+      <h1>Global inequality, made easier to understand.</h1>
+      <p>Mind the Gap turns fragmented news about humanitarian crises and development issues into clear, sourced summaries &mdash; and concrete ways to help.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="#discover">Explore the map</a>
+        <a class="btn btn-outline" href="html/take-action.html">Take action</a>
+      </div>
+    </section>
+
+    <section class="section discover" id="discover">
+      <div class="container">
+        <div class="section-header">
+          <h2>Where help is needed right now</h2>
+          <p>Country shading shows the overall level of humanitarian need; markers show individual news items. Filter by category to focus on what matters to you.</p>
+        </div>
+
+        <div class="discover-toolbar">
+          <div id="category-filter" class="filter-bar"></div>
+          <div class="view-toggle" role="group" aria-label="Switch view">
+            <button type="button" class="btn btn-outline" data-view-btn="map">Map</button>
+            <button type="button" class="btn btn-outline" data-view-btn="list">List</button>
+          </div>
+        </div>
+
+        <div class="discover-layout" id="discover-layout" data-view="map">
+          <div id="discover-map-wrap">
+            <div id="discover-map" aria-label="Map of global humanitarian needs"></div>
+            <div class="map-legend" id="map-legend"></div>
+          </div>
+          <div class="news-panel" id="news-feed">
+            <p class="state-message">Loading news...</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-header">
+          <h2>Awareness &rarr; Understanding &rarr; Action</h2>
+          <p>Every issue on Mind the Gap links context, reliable sources, and a way to get involved &mdash; inspired by the mission of Oxfam and aligned with UN SDG 10: Reduced Inequalities.</p>
+        </div>
+        <a class="btn btn-primary" href="html/about.html">Learn about the project</a>
+      </div>
+    </section>
+  </main>
+
+  <div data-include="footer"></div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+  <script type="module" src="js/main.js"></script>
+  <script type="module" src="js/pages/home.js"></script>
+</body>
+</html>
