@@ -1,0 +1,24 @@
+[
+  {
+    "id": 1,
+    "country": "Sudan",
+    "topic": "Food Security",
+    "title": "Sudan's growing food crisis",
+    "summary": "A short explanation of the current situation...",
+    "date": "2026-08-26",
+    "image": "assets/images/sudan.jpg",
+    "source": "Example Source",
+    "sourceUrl": "#"
+  },
+  {
+    "id": 2,
+    "country": "Kenya",
+    "topic": "Climate",
+    "title": "Drought threatens communities",
+    "summary": "A short explanation...",
+    "date": "2026-08-25",
+    "image": "assets/images/kenya.jpg",
+    "source": "Example Source",
+    "sourceUrl": "#"
+  }
+]
