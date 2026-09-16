@@ -3,40 +3,256 @@
     "code": "SDN",
     "name": "Sudan",
     "region": "East Africa",
-    "population": "48.1 million",
+    "population": "51.7 million",
     "needIndex": 5,
-    "categories": ["hunger", "war"],
+    "categories": [
+      "hunger",
+      "war"
+    ],
     "summary": "Sudan is facing one of the world's largest displacement and food security crises, driven by ongoing conflict and a collapsing economy.",
-    "image": "assets/images/sudan.jpg"
+    "image": "assets/images/sudan.jpg",
+    "indicators": {
+      "population": {
+        "value": 51662147,
+        "year": "2025",
+        "source": "World Bank Open Data (SP.POP.TOTL)",
+        "sourceUrl": "https://data.worldbank.org/indicator/SP.POP.TOTL?locations=SDN"
+      },
+      "giniIndex": {
+        "value": 34.2,
+        "year": "2014",
+        "source": "World Bank Open Data (SI.POV.GINI)",
+        "sourceUrl": "https://data.worldbank.org/indicator/SI.POV.GINI?locations=SDN"
+      },
+      "povertyRate3": {
+        "value": 10.1,
+        "year": "2014",
+        "label": "Poverty headcount ratio at $3.00/day (2021 PPP)",
+        "source": "World Bank Open Data (SI.POV.DDAY)",
+        "sourceUrl": "https://data.worldbank.org/indicator/SI.POV.DDAY?locations=SDN"
+      },
+      "undernourishment": {
+        "value": 11,
+        "year": "2021",
+        "label": "Prevalence of undernourishment",
+        "source": "World Bank Open Data (SN.ITK.DEFC.ZS)",
+        "sourceUrl": "https://data.worldbank.org/indicator/SN.ITK.DEFC.ZS?locations=SDN"
+      },
+      "currentCrisis": {
+        "affected": 19500000,
+        "measured": "people facing severe (IPC Crisis-level or worse) food insecurity",
+        "asOf": "2026-09-14",
+        "source": "UN News \u2014 \"UN agencies warn humanitarian system in Sudan 'could collapse'\"",
+        "sourceUrl": "https://news.un.org/en/story/2026/09/1168331"
+      }
+    },
+    "dataFetchedAt": "2026-09-16T11:01:47+00:00"
   },
   {
     "code": "KEN",
     "name": "Kenya",
     "region": "East Africa",
-    "population": "55.1 million",
-    "needIndex": 3,
-    "categories": ["climate", "hunger"],
+    "population": "57.5 million",
+    "needIndex": 2,
+    "categories": [
+      "climate",
+      "hunger"
+    ],
     "summary": "Recurring drought cycles in Kenya's arid and semi-arid regions continue to threaten food security and rural livelihoods.",
-    "image": "assets/images/kenya.jpg"
+    "image": "assets/images/kenya.jpg",
+    "indicators": {
+      "population": {
+        "value": 57532493,
+        "year": "2025",
+        "source": "World Bank Open Data (SP.POP.TOTL)",
+        "sourceUrl": "https://data.worldbank.org/indicator/SP.POP.TOTL?locations=KEN"
+      },
+      "giniIndex": {
+        "value": 38.5,
+        "year": "2022",
+        "source": "World Bank Open Data (SI.POV.GINI)",
+        "sourceUrl": "https://data.worldbank.org/indicator/SI.POV.GINI?locations=KEN"
+      },
+      "povertyRate3": {
+        "value": 45.5,
+        "year": "2022",
+        "label": "Poverty headcount ratio at $3.00/day (2021 PPP)",
+        "source": "World Bank Open Data (SI.POV.DDAY)",
+        "sourceUrl": "https://data.worldbank.org/indicator/SI.POV.DDAY?locations=KEN"
+      },
+      "undernourishment": {
+        "value": 36.8,
+        "year": "2023",
+        "label": "Prevalence of undernourishment",
+        "source": "World Bank Open Data (SN.ITK.DEFC.ZS)",
+        "sourceUrl": "https://data.worldbank.org/indicator/SN.ITK.DEFC.ZS?locations=KEN"
+      },
+      "currentCrisis": {
+        "affected": 3245000,
+        "measured": "people projected to need humanitarian food assistance (midpoint of FEWS NET's 3.0-3.49M range)",
+        "asOf": "2026-06-30",
+        "source": "FEWS NET \u2014 Kenya Food Security Outlook, June 2026",
+        "sourceUrl": "https://fews.net/east-africa/kenya/food-security-outlook/june-2026"
+      }
+    },
+    "dataFetchedAt": "2026-09-16T11:01:47+00:00"
   },
   {
     "code": "YEM",
     "name": "Yemen",
     "region": "Middle East",
-    "population": "34.4 million",
+    "population": "41.8 million",
     "needIndex": 5,
-    "categories": ["war", "hunger"],
+    "categories": [
+      "war",
+      "hunger"
+    ],
     "summary": "Years of conflict in Yemen have driven one of the world's largest humanitarian emergencies, with millions facing acute food insecurity.",
-    "image": "assets/images/yemen.jpg"
+    "image": "assets/images/yemen.jpg",
+    "indicators": {
+      "population": {
+        "value": 41773878,
+        "year": "2025",
+        "source": "World Bank Open Data (SP.POP.TOTL)",
+        "sourceUrl": "https://data.worldbank.org/indicator/SP.POP.TOTL?locations=YEM"
+      },
+      "giniIndex": {
+        "value": 36.7,
+        "year": "2014",
+        "source": "World Bank Open Data (SI.POV.GINI)",
+        "sourceUrl": "https://data.worldbank.org/indicator/SI.POV.GINI?locations=YEM"
+      },
+      "povertyRate3": {
+        "value": 33.3,
+        "year": "2014",
+        "label": "Poverty headcount ratio at $3.00/day (2021 PPP)",
+        "source": "World Bank Open Data (SI.POV.DDAY)",
+        "sourceUrl": "https://data.worldbank.org/indicator/SI.POV.DDAY?locations=YEM"
+      },
+      "undernourishment": {
+        "value": null,
+        "year": null,
+        "label": "Prevalence of undernourishment",
+        "source": "World Bank Open Data (SN.ITK.DEFC.ZS)",
+        "sourceUrl": "https://data.worldbank.org/indicator/SN.ITK.DEFC.ZS?locations=YEM"
+      },
+      "currentCrisis": {
+        "affected": 17000000,
+        "measured": "people in IPC Phase 3 (Crisis) or above, most recent whole-country estimate",
+        "asOf": "2025-06-29",
+        "source": "FAO / IPC country profile for Yemen",
+        "sourceUrl": "https://www.fao.org/countryprofiles/news-archive/detail-news/en/c/1739797",
+        "note": "The most recent 2026 IPC analyses only cover government-controlled areas (~5 million people in Crisis+) because Houthi-controlled northern Yemen, home to the majority of the population, has not had a comparable joint analysis published. That access gap is itself an example of the kind of gap this project is about \u2014 see https://www.ipcinfo.org/ipc-country-analysis/details-map/en/c/1163308/"
+      }
+    },
+    "dataFetchedAt": "2026-09-16T11:01:47+00:00"
   },
   {
     "code": "HTI",
     "name": "Haiti",
     "region": "Caribbean",
-    "population": "11.7 million",
-    "needIndex": 4,
-    "categories": ["health", "disaster"],
-    "summary": "Gang violence, disease outbreaks and natural disasters continue to strain Haiti's health system and displace communities.",
-    "image": "assets/images/haiti.jpg"
+    "population": "11.9 million",
+    "needIndex": 3,
+    "categories": [
+      "disaster",
+      "health",
+      "war"
+    ],
+    "summary": "Gang violence has pushed displacement in Haiti to record levels, compounding disease outbreaks and a fragile health system.",
+    "image": "assets/images/haiti.jpg",
+    "indicators": {
+      "population": {
+        "value": 11906095,
+        "year": "2025",
+        "source": "World Bank Open Data (SP.POP.TOTL)",
+        "sourceUrl": "https://data.worldbank.org/indicator/SP.POP.TOTL?locations=HTI"
+      },
+      "giniIndex": {
+        "value": 41.1,
+        "year": "2012",
+        "source": "World Bank Open Data (SI.POV.GINI)",
+        "sourceUrl": "https://data.worldbank.org/indicator/SI.POV.GINI?locations=HTI"
+      },
+      "povertyRate3": {
+        "value": 40.4,
+        "year": "2012",
+        "label": "Poverty headcount ratio at $3.00/day (2021 PPP)",
+        "source": "World Bank Open Data (SI.POV.DDAY)",
+        "sourceUrl": "https://data.worldbank.org/indicator/SI.POV.DDAY?locations=HTI"
+      },
+      "undernourishment": {
+        "value": 54.2,
+        "year": "2023",
+        "label": "Prevalence of undernourishment",
+        "source": "World Bank Open Data (SN.ITK.DEFC.ZS)",
+        "sourceUrl": "https://data.worldbank.org/indicator/SN.ITK.DEFC.ZS?locations=HTI"
+      },
+      "currentCrisis": {
+        "affected": 1500000,
+        "measured": "people internally displaced by gang violence",
+        "asOf": "2026-06-05",
+        "source": "UN News \u2014 \"Haiti: Harrowing needs must be met with long-term engagement\" (citing IOM)",
+        "sourceUrl": "https://news.un.org/en/story/2026/06/1167661"
+      }
+    },
+    "dataFetchedAt": "2026-09-16T11:01:47+00:00"
+  },
+  {
+    "code": "NGA",
+    "name": "Nigeria",
+    "region": "West Africa",
+    "population": "237.5 million",
+    "needIndex": 2,
+    "categories": [
+      "hunger",
+      "war"
+    ],
+    "summary": "Conflict in Nigeria's northeast and shrinking humanitarian funding have driven hunger in the north to its worst levels in nearly a decade.",
+    "image": "assets/images/nigeria.jpg",
+    "indicators": {
+      "population": {
+        "value": 237527782,
+        "year": "2025",
+        "source": "World Bank Open Data (SP.POP.TOTL)",
+        "sourceUrl": "https://data.worldbank.org/indicator/SP.POP.TOTL?locations=NGA"
+      },
+      "giniIndex": {
+        "value": 33.9,
+        "year": "2022",
+        "source": "World Bank Open Data (SI.POV.GINI)",
+        "sourceUrl": "https://data.worldbank.org/indicator/SI.POV.GINI?locations=NGA"
+      },
+      "povertyRate3": {
+        "value": 41.8,
+        "year": "2022",
+        "label": "Poverty headcount ratio at $3.00/day (2021 PPP)",
+        "source": "World Bank Open Data (SI.POV.DDAY)",
+        "sourceUrl": "https://data.worldbank.org/indicator/SI.POV.DDAY?locations=NGA"
+      },
+      "undernourishment": {
+        "value": 19.9,
+        "year": "2023",
+        "label": "Prevalence of undernourishment",
+        "source": "World Bank Open Data (SN.ITK.DEFC.ZS)",
+        "sourceUrl": "https://data.worldbank.org/indicator/SN.ITK.DEFC.ZS?locations=NGA"
+      },
+      "currentCrisis": {
+        "affected": 17000000,
+        "measured": "people facing Crisis-or-worse hunger across 9 conflict-affected northern states",
+        "asOf": "2026-07-02",
+        "source": "World Food Programme \u2014 \"Conflict and shrinking humanitarian assistance drives northern Nigeria hunger crisis...\"",
+        "sourceUrl": "https://www.wfp.org/news/conflict-and-shrinking-humanitarian-assistance-drives-northern-nigeria-hunger-crisis-levels"
+      },
+      "nationalStat": {
+        "label": "Multidimensionally poor (National MPI)",
+        "value": 63,
+        "unit": "%",
+        "peopleAffected": 133000000,
+        "year": 2022,
+        "source": "Nigeria National Bureau of Statistics \u2014 2022 National Multidimensional Poverty Index",
+        "sourceUrl": "https://www.nigerianstat.gov.ng/news/78"
+      }
+    },
+    "dataFetchedAt": "2026-09-16T11:01:47+00:00"
   }
 ]
