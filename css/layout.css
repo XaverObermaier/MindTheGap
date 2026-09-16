@@ -22,6 +22,9 @@
 }
 
 .site-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
   font-weight: 700;
   font-size: 1.25rem;
   text-decoration: none;
@@ -30,6 +33,23 @@
 
 .site-logo span {
   color: var(--color-primary);
+}
+
+.logo-mark {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.logo-mark img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.08);
 }
 
 .nav-toggle {
@@ -171,6 +191,13 @@ main {
   background: var(--color-secondary);
   color: #fff;
   margin-top: var(--space-7);
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: var(--space-2);
 }
 
 .site-footer .container {
