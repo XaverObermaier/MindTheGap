@@ -1,6 +1,7 @@
 import { getCountryByCode, getNewsByCountryCode, getCategoryMap } from "../services/dataService.js";
 import { newsCard } from "../components/newsCard.js";
 import { needColor } from "../utils/needColor.js";
+import { formatCount } from "../utils/format.js";
 import { qs } from "../utils/dom.js";
 import { HTML_DIR } from "../utils/basePath.js";
 
@@ -44,6 +45,7 @@ async function initCountryDetail() {
       <div class="detail-body">
         <p>${country.summary}</p>
         <div>${categoryTags}</div>
+        ${renderIndicators(country.indicators)}
         <a class="btn btn-primary" href="${HTML_DIR}take-action.html">See ways to help</a>
       </div>
     `;
@@ -58,6 +60,85 @@ async function initCountryDetail() {
     container.innerHTML = `<p class="state-message">Could not load this country right now.</p>`;
     console.error(error);
   }
+}
+
+function renderIndicators(indicators) {
+  if (!indicators) return "";
+
+  const crisis = indicators.currentCrisis;
+  const crisisBlock = crisis
+    ? `
+      <div class="indicator-crisis">
+        <h3>Current crisis</h3>
+        <p>
+          <strong>${formatCount(crisis.affected)} people</strong> — ${crisis.measured}
+          (as of ${crisis.asOf}). This is the figure the map's need level is based on, not the
+          structural indicators below — see why in
+          <a href="${HTML_DIR}about.html">About</a>.
+        </p>
+        <p class="source-note">Source: <a href="${crisis.sourceUrl}" target="_blank" rel="noopener">${crisis.source}</a></p>
+        ${crisis.note ? `<p class="source-note">${crisis.note}</p>` : ""}
+      </div>
+    `
+    : "";
+
+  const stats = [
+    indicators.giniIndex && {
+      label: "Gini index",
+      value: indicators.giniIndex.value != null ? indicators.giniIndex.value : "No recent data",
+      year: indicators.giniIndex.year,
+      source: indicators.giniIndex.source,
+      sourceUrl: indicators.giniIndex.sourceUrl,
+    },
+    indicators.povertyRate3 && {
+      label: indicators.povertyRate3.label,
+      value: indicators.povertyRate3.value != null ? `${indicators.povertyRate3.value}%` : "No recent data",
+      year: indicators.povertyRate3.year,
+      source: indicators.povertyRate3.source,
+      sourceUrl: indicators.povertyRate3.sourceUrl,
+    },
+    indicators.undernourishment && {
+      label: indicators.undernourishment.label,
+      value: indicators.undernourishment.value != null ? `${indicators.undernourishment.value}%` : "No recent data",
+      year: indicators.undernourishment.year,
+      source: indicators.undernourishment.source,
+      sourceUrl: indicators.undernourishment.sourceUrl,
+    },
+    indicators.nationalStat && {
+      label: indicators.nationalStat.label,
+      value: `${indicators.nationalStat.value}${indicators.nationalStat.unit || ""}`,
+      year: indicators.nationalStat.year,
+      source: indicators.nationalStat.source,
+      sourceUrl: indicators.nationalStat.sourceUrl,
+    },
+  ].filter(Boolean);
+
+  const statsGrid = stats.length
+    ? `
+      <div class="indicator-grid">
+        ${stats
+          .map(
+            (stat) => `
+              <div class="indicator">
+                <span class="indicator-value">${stat.value}</span>
+                <span class="indicator-label">${stat.label}${stat.year ? ` (${stat.year})` : ""}</span>
+                <a class="indicator-source" href="${stat.sourceUrl}" target="_blank" rel="noopener">${stat.source}</a>
+              </div>
+            `
+          )
+          .join("")}
+      </div>
+    `
+    : "";
+
+  if (!crisisBlock && !statsGrid) return "";
+
+  return `
+    <div class="indicators-section">
+      ${crisisBlock}
+      ${statsGrid ? `<h3>Structural indicators</h3>${statsGrid}` : ""}
+    </div>
+  `;
 }
 
 initCountryDetail();
