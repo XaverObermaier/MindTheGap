@@ -1,0 +1,10 @@
+[
+  { "id": "time-general", "label": "General volunteer time" },
+  { "id": "fundraising", "label": "Fundraising / donations support" },
+  { "id": "medical", "label": "Medical / health expertise" },
+  { "id": "logistics", "label": "Logistics / supply chain" },
+  { "id": "translation", "label": "Translation / language skills" },
+  { "id": "tech-design", "label": "Tech, design, or digital skills" },
+  { "id": "advocacy", "label": "Advocacy / communications" },
+  { "id": "local-contacts", "label": "Local contacts / on-the-ground network" }
+]
