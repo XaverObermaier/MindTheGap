@@ -24,12 +24,32 @@
         <h2>How summaries are produced</h2>
         <p>News summaries are written to be understandable at a glance and always link back to their original source. As the project develops, summaries will be generated with AI assistance from underlying source material &mdash; every summary will continue to disclose and link its source, and will never state something the source doesn't support.</p>
 
-        <h2>Where the map data comes from</h2>
+        <h2 id="need-index-methodology">Where the map data comes from</h2>
         <p>Each country page shows two different kinds of numbers, and they're kept separate on purpose.</p>
         <p><strong>Structural indicators</strong> &mdash; population, the Gini index, the poverty headcount ratio, undernourishment &mdash; are fetched live from the World Bank Open Data API by <code>pipeline/fetch_worldbank_data.py</code>, re-runnable any time to pull the latest published figures. Where a country has a national statistic worth citing (for example, Nigeria's National Bureau of Statistics Multidimensional Poverty Index), that's included too, with its own source link.</p>
         <p><strong>The map's colour</strong> (need level) is <em>not</em> based on those structural indicators. That's a deliberate choice: for countries in active conflict, like Sudan and Yemen, the last time a normal household survey was possible was years before the current crisis &mdash; so the "official" poverty rate looks lower than it's ever been, right when the actual need is at its highest. Using that number to colour the map would show the world's worst crises as low-need. Instead, the need level is driven by the most recent, specific, cited estimate of how many people are directly affected by the crisis described on that page &mdash; shown at the top of the "Current crisis" box on each country's page, with its source and date.</p>
         <p>We tried to pull that crisis figure live too, from ReliefWeb's and HDX's public APIs. Both blocked every automated request made while building this pipeline (HTTP 403, even for a plain, documented query) &mdash; the fetch code is still in the pipeline script, disabled, in case that changes. Until then, those figures are entered by hand each time the pipeline is refreshed, always with a citation and a checked date, which you can verify by following the source link.</p>
+        <p><strong>The exact calculation:</strong> the cited crisis figure divided by the country's total population, placed into one of five bands (35%+ of the population &rarr; level 5, 20&ndash;35% &rarr; level 4, 10&ndash;20% &rarr; level 3, 4&ndash;10% &rarr; level 2, under 4% &rarr; level 1). This is a real, deterministic formula &mdash; not an editorial judgment call &mdash; and it's implemented in <code>pipeline/fetch_worldbank_data.py</code>, which anyone can read and re-run.</p>
         <p>That gap &mdash; between what official statistics can currently measure and what's actually happening on the ground &mdash; isn't a bug we're hiding. It's part of what this project is trying to show.</p>
+
+        <h3>Known limitations we're actively working on</h3>
+        <p>Being transparent about the method means being transparent about where it's still imperfect:</p>
+        <ul>
+          <li><strong>Mixed measures across countries.</strong> The "affected" figure means something different per country &mdash; food-insecure in Sudan, internally displaced in Haiti &mdash; but the formula divides all of them by population the same way. That inconsistency is visible (each country's "measured" text says exactly what its number counts) but not yet normalized.</li>
+          <li><strong>Missing-data fallback.</strong> If a country has no cited crisis estimate, the pipeline currently defaults to the lowest need level (1) rather than a distinct "insufficient data" state. The website itself is built to show "Insufficient data" instead of a number whenever that's true &mdash; the pipeline just doesn't emit that signal yet.</li>
+          <li><strong>Regional crises divided by national population.</strong> When a crisis is concentrated in part of a country (like northern Nigeria), dividing by the whole country's population can understate it relative to a country where the same number of people affected is a much larger share nationally.</li>
+        </ul>
+
+        <h2>Found something wrong, or have feedback?</h2>
+        <p>Tell us. This form isn't connected to a live inbox yet &mdash; that's still coming, including a named correction contact and a response-time commitment &mdash; but you can try it here now, and it's saved on this device so you can see it working.</p>
+        <form id="feedback-form" class="feedback-form">
+          <label for="feedback-message">Your feedback or correction</label>
+          <textarea id="feedback-message" rows="4" required></textarea>
+          <label for="feedback-contact">How can we reach you? (optional)</label>
+          <input type="text" id="feedback-contact" placeholder="Email or name">
+          <button type="submit" class="btn btn-primary">Send Feedback</button>
+          <p class="state-message" id="feedback-status"></p>
+        </form>
 
         <h2>A university project</h2>
         <p>Mind the Gap is built as a university project exploring how technology can make complex global issues more accessible.</p>
@@ -40,5 +60,6 @@
   <div data-include="footer"></div>
 
   <script type="module" src="../js/main.js"></script>
+  <script type="module" src="../js/pages/about.js"></script>
 </body>
 </html>

@@ -1,5 +1,5 @@
 import { truncate } from "../utils/format.js";
-import { needColor } from "../utils/needColor.js";
+import { needColor, needLabel } from "../utils/needColor.js";
 import { HTML_DIR } from "../utils/basePath.js";
 
 export function countryCard(country) {
@@ -9,7 +9,7 @@ export function countryCard(country) {
       <div class="card-body">
         <div class="card-meta">
           <span class="tag">${country.region}</span>
-          <span class="tag" style="background:${needColor(country.needIndex)}">Need ${country.needIndex}/5</span>
+          <span class="tag" style="background:${needColor(country.needIndex)}">${needLabel(country.needIndex, { short: true })}</span>
         </div>
         <h3>${country.name}</h3>
         <p>${truncate(country.summary, 110)}</p>

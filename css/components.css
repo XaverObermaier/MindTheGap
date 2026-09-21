@@ -110,6 +110,17 @@
   color: #fff;
 }
 
+.need-info-link {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  text-decoration: underline;
+  align-self: center;
+}
+
+.need-info-link:hover {
+  color: var(--color-primary);
+}
+
 .tag-recognition {
   background: var(--color-accent);
   color: var(--color-secondary);
@@ -143,6 +154,35 @@
   color: #fff;
 }
 
+/* Feedback form */
+.feedback-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  max-width: 50ch;
+}
+
+.feedback-form label {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--color-secondary);
+}
+
+.feedback-form textarea,
+.feedback-form input[type="text"] {
+  padding: var(--space-2);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  font: inherit;
+  color: var(--color-text);
+  resize: vertical;
+}
+
+.feedback-form button {
+  align-self: flex-start;
+  margin-top: var(--space-1);
+}
+
 /* Detail page */
 .detail-header {
   padding-block: var(--space-6) var(--space-4);
@@ -162,6 +202,18 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-4);
+}
+
+.detail-body ul {
+  list-style: disc;
+  padding-left: 1.4em;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.detail-body li {
+  color: var(--color-text-muted);
 }
 
 .source-note {
