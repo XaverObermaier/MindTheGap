@@ -29,6 +29,10 @@ export function getOrganizations() {
   return fetchJSON(DATA_PATHS.organizations);
 }
 
+export function getOfferTypes() {
+  return fetchJSON(DATA_PATHS.offerTypes);
+}
+
 export async function getNewsById(id) {
   const news = await getNews();
   return news.find((item) => String(item.id) === String(id));
