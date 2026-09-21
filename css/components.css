@@ -110,6 +110,16 @@
   color: #fff;
 }
 
+.tag-recognition {
+  background: var(--color-accent);
+  color: var(--color-secondary);
+  text-decoration: none;
+}
+
+.tag-recognition:hover {
+  text-decoration: underline;
+}
+
 /* Filter bar */
 .filter-bar {
   display: flex;

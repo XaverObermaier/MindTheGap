@@ -39,6 +39,7 @@ async function initCountryDetail() {
       <div class="card-meta">
         <span class="tag">${country.region}</span>
         <span class="tag" style="background:${needColor(country.needIndex)}">Need level ${country.needIndex}/5</span>
+        ${renderExternalRecognition(country.externalRecognition)}
       </div>
       <h1>${country.name}</h1>
       <div class="card-meta"><span>Population: ${country.population}</span></div>
@@ -60,6 +61,15 @@ async function initCountryDetail() {
     container.innerHTML = `<p class="state-message">Could not load this country right now.</p>`;
     console.error(error);
   }
+}
+
+function renderExternalRecognition(externalRecognition) {
+  if (!externalRecognition) return "";
+  return `
+    <a class="tag tag-recognition" href="${externalRecognition.url}" target="_blank" rel="noopener">
+      Ranked #${externalRecognition.rank} most neglected displacement crisis &mdash; NRC 2025
+    </a>
+  `;
 }
 
 function renderIndicators(indicators) {
