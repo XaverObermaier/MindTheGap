@@ -1,6 +1,6 @@
 import { getCountryByCode, getNewsByCountryCode, getCategoryMap } from "../services/dataService.js";
 import { newsCard } from "../components/newsCard.js";
-import { needColor } from "../utils/needColor.js";
+import { needColor, needLabel } from "../utils/needColor.js";
 import { formatCount } from "../utils/format.js";
 import { qs } from "../utils/dom.js";
 import { HTML_DIR } from "../utils/basePath.js";
@@ -38,7 +38,8 @@ async function initCountryDetail() {
       <div class="detail-image" style="background-image: url('${country.image}')"></div>
       <div class="card-meta">
         <span class="tag">${country.region}</span>
-        <span class="tag" style="background:${needColor(country.needIndex)}">Need level ${country.needIndex}/5</span>
+        <span class="tag" style="background:${needColor(country.needIndex)}">${needLabel(country.needIndex)}</span>
+        <a class="need-info-link" href="${HTML_DIR}about.html#need-index-methodology">How this is calculated</a>
         ${renderExternalRecognition(country.externalRecognition)}
       </div>
       <h1>${country.name}</h1>

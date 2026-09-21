@@ -280,10 +280,12 @@ def build_countries() -> list[dict]:
         population_year = indicator_data["population"][code]["year"]
 
         crisis = CRISIS_ESTIMATES.get(code)
+        # `None` here (not a fallback numeral like 1) is deliberate: it lets the
+        # frontend distinguish "no cited crisis estimate exists" from "we checked
+        # and this country is genuinely low-need" — see needLabel() in
+        # js/utils/needColor.js and the "Insufficient data" state it renders.
         need_index = (
-            need_index_from_share(crisis["affected"], population)
-            if crisis and population
-            else 1
+            need_index_from_share(crisis["affected"], population) if crisis and population else None
         )
 
         indicators = {

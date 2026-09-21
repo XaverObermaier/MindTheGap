@@ -1,6 +1,6 @@
 import { getCountries, getNews } from "./dataService.js";
 import { WORLD_GEOJSON_URL } from "../config.js";
-import { needColor } from "../utils/needColor.js";
+import { needColor, needLabel } from "../utils/needColor.js";
 import { HTML_DIR } from "../utils/basePath.js";
 
 export async function createDiscoverMap(elementId, { categoryMap }) {
@@ -57,7 +57,7 @@ function addChoropleth(map, countries, worldGeoJson) {
     onEachFeature: (feature, layer) => {
       const country = countryByName.get(feature.properties.name);
       if (!country) return;
-      layer.bindTooltip(`${country.name} — need level ${country.needIndex}/5`);
+      layer.bindTooltip(`${country.name} — ${needLabel(country.needIndex, { short: true }).toLowerCase()}`);
       layer.on({
         mouseover: () => layer.setStyle({ weight: 2, color: "#1b2a4a" }),
         mouseout: () => layer.setStyle({ weight: 1, color: "#ffffff" }),
