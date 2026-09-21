@@ -30,6 +30,15 @@
   color: #fff;
 }
 
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn:disabled:hover {
+  background: var(--color-primary);
+}
+
 /* Hero */
 .hero {
   padding-block: var(--space-8) var(--space-6);
@@ -59,6 +68,7 @@
   background: var(--color-bg);
   text-decoration: none;
   color: inherit;
+  scroll-margin-top: 90px;
   transition: box-shadow 0.15s ease, transform 0.15s ease;
 }
 
@@ -348,4 +358,13 @@
 .org-card-match {
   border-color: var(--color-primary);
   box-shadow: 0 0 0 1px var(--color-primary);
+}
+
+.org-card-best {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 2px var(--color-accent);
+}
+
+.org-card-best .tag-recognition {
+  align-self: flex-start;
 }
