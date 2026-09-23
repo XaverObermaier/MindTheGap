@@ -51,7 +51,7 @@ async function initCountryDetail() {
         <p>${country.summary}</p>
         <div>${categoryTags}</div>
         ${renderIndicators(country.indicators)}
-        <a class="btn btn-primary" href="${HTML_DIR}take-action.html">See ways to help</a>
+        <a class="btn btn-primary" href="${HTML_DIR}take-action.html?country=${encodeURIComponent(country.code)}">See ways to help</a>
       </div>
     `;
 

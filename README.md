@@ -80,3 +80,31 @@ Chosen deliberately as representative, dignified imagery of each place rather th
 3. GitHub will publish the site at `https://xaverobermaier.github.io/MindTheGap/` within a minute or two.
 
 No further setup needed — the site was built to work correctly whether it's served from a domain root or from a GitHub Pages project subpath like this one.
+
+## Matching checks
+
+With Node.js 22 or newer, run the dependency-free matching tests:
+
+```bash
+node --test tests/*.test.mjs
+```
+
+Country profiles link to `html/take-action.html?country=SDN` (using the selected
+country code). Organizations matching any of that profile's issue categories
+appear first; selected offers order organizations within each group. Matches
+use the curated issue tags, not verified country-specific programs. Existing
+`?category=health` links still work and take precedence if both parameters exist.
+
+For browser regression checks, start the local server above and a separate
+Chrome profile with remote debugging (on macOS):
+
+```bash
+"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless=new --remote-debugging-port=9222 --user-data-dir=/tmp/mtg-test-chrome
+node tests/actionFlow.browser.mjs http://127.0.0.1:5500
+```
+
+On other platforms, substitute the Chrome executable. Use a separate profile:
+the checks reset this site's supporter/offer preferences in that profile.
+The browser suite covers country navigation, recommendations after offer edits
+and reloads, parameter precedence, and unavailable country data. Pass a site URL
+ending in `/MindTheGap` to check a server configured for the GitHub Pages subpath.
