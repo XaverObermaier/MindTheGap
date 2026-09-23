@@ -33,6 +33,17 @@ export function getOfferTypes() {
   return fetchJSON(DATA_PATHS.offerTypes);
 }
 
+export function getImageCredits() {
+  return fetchJSON(DATA_PATHS.imageCredits);
+}
+
+export async function getImageCredit(imagePath) {
+  if (!imagePath) return null;
+  const credits = await getImageCredits();
+  const filename = imagePath.split("/").pop();
+  return credits[filename] || null;
+}
+
 export async function getNewsById(id) {
   const news = await getNews();
   return news.find((item) => String(item.id) === String(id));

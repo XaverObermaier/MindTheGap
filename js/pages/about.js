@@ -1,4 +1,5 @@
 import { qs } from "../utils/dom.js";
+import { getCountries, getImageCredits } from "../services/dataService.js";
 
 const FEEDBACK_KEY = "mtg_feedback";
 
@@ -31,4 +32,25 @@ function initFeedbackForm() {
   });
 }
 
+async function initPhotoCredits() {
+  const list = qs("#photo-credits");
+  if (!list) return;
+
+  try {
+    const [countries, credits] = await Promise.all([getCountries(), getImageCredits()]);
+    const nameByFilename = new Map(countries.map((country) => [country.image.split("/").pop(), country.name]));
+
+    list.innerHTML = Object.entries(credits)
+      .map(([filename, credit]) => {
+        const label = nameByFilename.get(filename) || filename;
+        return `<li>${label} &mdash; <a href="${credit.url}" target="_blank" rel="noopener">${credit.photographer}</a> via ${credit.source}</li>`;
+      })
+      .join("");
+  } catch (error) {
+    list.innerHTML = `<li class="state-message">Could not load photo credits right now.</li>`;
+    console.error(error);
+  }
+}
+
 initFeedbackForm();
+initPhotoCredits();
