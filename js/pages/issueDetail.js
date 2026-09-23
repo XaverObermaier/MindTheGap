@@ -30,7 +30,7 @@ async function initIssueDetail() {
     document.title = `${item.title} — Mind the Gap`;
 
     container.innerHTML = `
-      <div class="detail-image" style="background-image: url('${ROOT}${item.image}')"></div>
+      <div class="detail-image" role="img" aria-label="Photo illustrating: ${item.title}" style="background-image: url('${ROOT}${item.image}')"></div>
       ${photoCreditNote(imageCredit)}
       <span class="tag tag-primary" style="background:${category?.color || ""}">${category?.label || item.category}</span>
       <h1>${item.title}</h1>

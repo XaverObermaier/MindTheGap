@@ -37,7 +37,7 @@ async function initCountryDetail() {
       .join(" ");
 
     container.innerHTML = `
-      <div class="detail-image" style="background-image: url('${ROOT}${country.image}')"></div>
+      <div class="detail-image" role="img" aria-label="Photo of ${country.name}" style="background-image: url('${ROOT}${country.image}')"></div>
       ${photoCreditNote(imageCredit)}
       <div class="card-meta">
         <span class="tag">${country.region}</span>

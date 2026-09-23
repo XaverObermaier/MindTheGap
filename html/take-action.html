@@ -10,9 +10,10 @@
   <link rel="stylesheet" href="../css/components.css">
 </head>
 <body data-page="take-action">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   <div data-include="header"></div>
 
-  <main>
+  <main id="main-content">
     <section class="section">
       <div class="container">
         <div class="section-header">
@@ -23,7 +24,7 @@
         <div class="supporter-widget">
           <div class="avatar-frame" id="avatar-frame"><span>MTG</span></div>
           <div>
-            <button type="button" class="btn btn-primary" id="supporter-toggle">Become a Supporter</button>
+            <button type="button" class="btn btn-primary" id="supporter-toggle" aria-pressed="false">Become a Supporter</button>
             <p class="state-message" id="supporter-status"></p>
           </div>
         </div>
