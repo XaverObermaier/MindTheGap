@@ -80,3 +80,17 @@ Chosen deliberately as representative, dignified imagery of each place rather th
 3. GitHub will publish the site at `https://xaverobermaier.github.io/MindTheGap/` within a minute or two.
 
 No further setup needed — the site was built to work correctly whether it's served from a domain root or from a GitHub Pages project subpath like this one.
+
+## Matching checks
+
+With Node.js 22 or newer, run the dependency-free matching tests:
+
+```bash
+node --test tests/*.test.mjs
+```
+
+Country profiles link to `html/take-action.html?country=SDN` (using the selected
+country code). Organizations matching any of that profile's issue categories
+appear first; selected offers order organizations within each group. Matches
+use the curated issue tags, not verified country-specific programs. Existing
+`?category=health` links still work and take precedence if both parameters exist.
