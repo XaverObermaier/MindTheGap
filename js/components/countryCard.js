@@ -1,11 +1,11 @@
 import { truncate } from "../utils/format.js";
 import { needColor, needLabel } from "../utils/needColor.js";
-import { HTML_DIR } from "../utils/basePath.js";
+import { HTML_DIR, ROOT } from "../utils/basePath.js";
 
 export function countryCard(country) {
   return `
     <a class="card" href="${HTML_DIR}country.html?code=${country.code}">
-      <div class="card-image" style="background-image: url('${country.image}')"></div>
+      <div class="card-image" style="background-image: url('${ROOT}${country.image}')"></div>
       <div class="card-body">
         <div class="card-meta">
           <span class="tag">${country.region}</span>

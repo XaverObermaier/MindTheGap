@@ -61,6 +61,18 @@ This overwrites `data/countries.json` with fresh World Bank numbers (same curate
 
 **News data** (`data/news.json`) isn't pipeline-generated yet. We tried: ReliefWeb's and HDX's API endpoints both returned HTTP 403 to every automated request made while building this, even simple documented ones, which looks like bot/edge protection rather than a wrong request — their regular web pages loaded fine, just not `api.reliefweb.int` or the HDX API. The `try_fetch_reliefweb()` function in the pipeline script is a stub for whoever gets that working. Until then, the five items in `data/news.json` are real, dated, individually verified and cited news from UN News, WFP, and FEWS NET — not automated, but not placeholder either.
 
+## Image credits
+
+`assets/images/*.jpg` are real photos from [Pexels](https://www.pexels.com), used under the [Pexels License](https://www.pexels.com/license/) (free for this kind of use, attribution not required, but credited here anyway):
+
+- `sudan.jpg` — [Omar Tarig](https://www.pexels.com/photo/14348540/), aerial view of a town in Sudan
+- `kenya.jpg` — [Mukula Igavinchi](https://www.pexels.com/photo/4242550/), Nairobi skyline
+- `yemen.jpg` — [Yuksel Ozdemir](https://www.pexels.com/photo/27513587/), fishing boats at the coast of Aden
+- `haiti.jpg` — [Matteo Favre](https://www.pexels.com/photo/2405427/), aerial view of a residential area in Port-au-Prince
+- `nigeria.jpg` — [Aminu Fahd](https://www.pexels.com/photo/38784175/), Lagos skyline at sunset
+
+Chosen deliberately as representative, dignified imagery of each place rather than staged "crisis" stock photography — none of these depict the specific event described in that country's news items.
+
 ## Deploying / enabling GitHub Pages
 
 1. Push the current work to `main` on GitHub.

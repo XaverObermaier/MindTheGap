@@ -3,7 +3,7 @@ import { newsCard } from "../components/newsCard.js";
 import { needColor, needLabel } from "../utils/needColor.js";
 import { formatCount } from "../utils/format.js";
 import { qs } from "../utils/dom.js";
-import { HTML_DIR } from "../utils/basePath.js";
+import { HTML_DIR, ROOT } from "../utils/basePath.js";
 
 async function initCountryDetail() {
   const container = qs("#country-detail");
@@ -35,7 +35,7 @@ async function initCountryDetail() {
       .join(" ");
 
     container.innerHTML = `
-      <div class="detail-image" style="background-image: url('${country.image}')"></div>
+      <div class="detail-image" style="background-image: url('${ROOT}${country.image}')"></div>
       <div class="card-meta">
         <span class="tag">${country.region}</span>
         <span class="tag" style="background:${needColor(country.needIndex)}">${needLabel(country.needIndex)}</span>

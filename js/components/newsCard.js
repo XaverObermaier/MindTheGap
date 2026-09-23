@@ -1,5 +1,5 @@
 import { formatDate, truncate } from "../utils/format.js";
-import { HTML_DIR } from "../utils/basePath.js";
+import { HTML_DIR, ROOT } from "../utils/basePath.js";
 
 export function newsCard(item, categoryMap) {
   const category = categoryMap?.get(item.category);
@@ -8,7 +8,7 @@ export function newsCard(item, categoryMap) {
 
   return `
     <a class="card" href="${HTML_DIR}issue.html?id=${item.id}">
-      <div class="card-image" style="background-image: url('${item.image}')"></div>
+      <div class="card-image" style="background-image: url('${ROOT}${item.image}')"></div>
       <div class="card-body">
         <span class="tag" ${tagStyle}>${categoryLabel}</span>
         <h3>${item.title}</h3>
