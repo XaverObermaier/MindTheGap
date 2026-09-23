@@ -41,13 +41,16 @@
         </ul>
 
         <h2>Found something wrong, or have feedback?</h2>
-        <p>Tell us. Submitting opens an email to <a href="mailto:go93mof@mytum.de">go93mof@mytum.de</a> with your message pre-filled &mdash; a real inbox someone on the team reads, though we're not yet committing to a specific response-time target.</p>
-        <form id="feedback-form" class="feedback-form">
+        <p>Tell us. Submitting sends an email directly to <a href="mailto:go93mof@mytum.de">go93mof@mytum.de</a> &mdash; a real inbox someone on the team reads, though we're not yet committing to a specific response-time target. Limited to 3 messages per 24 hours per device, to keep this from being spammed.</p>
+        <form id="feedback-form" class="feedback-form" action="https://formsubmit.co/go93mof@mytum.de" method="POST">
+          <input type="hidden" name="_subject" value="Mind the Gap feedback">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_next" id="feedback-next" value="">
           <label for="feedback-message">Your feedback or correction</label>
-          <textarea id="feedback-message" rows="4" required></textarea>
+          <textarea id="feedback-message" name="message" rows="4" required></textarea>
           <label for="feedback-contact">How can we reach you? (optional)</label>
-          <input type="text" id="feedback-contact" placeholder="Email or name">
-          <button type="submit" class="btn btn-primary">Send Feedback</button>
+          <input type="text" id="feedback-contact" name="contact" placeholder="Email or name">
+          <button type="submit" class="btn btn-primary" id="feedback-submit">Send Feedback</button>
           <p class="state-message" id="feedback-status"></p>
         </form>
 
