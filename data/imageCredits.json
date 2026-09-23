@@ -1,0 +1,27 @@
+{
+  "sudan.jpg": {
+    "photographer": "Omar Tarig",
+    "url": "https://www.pexels.com/photo/14348540/",
+    "source": "Pexels"
+  },
+  "kenya.jpg": {
+    "photographer": "Mukula Igavinchi",
+    "url": "https://www.pexels.com/photo/4242550/",
+    "source": "Pexels"
+  },
+  "yemen.jpg": {
+    "photographer": "Yuksel Ozdemir",
+    "url": "https://www.pexels.com/photo/27513587/",
+    "source": "Pexels"
+  },
+  "haiti.jpg": {
+    "photographer": "Matteo Favre",
+    "url": "https://www.pexels.com/photo/2405427/",
+    "source": "Pexels"
+  },
+  "nigeria.jpg": {
+    "photographer": "Aminu Fahd",
+    "url": "https://www.pexels.com/photo/38784175/",
+    "source": "Pexels"
+  }
+}

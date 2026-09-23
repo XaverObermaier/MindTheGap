@@ -207,6 +207,22 @@
   margin-bottom: var(--space-5);
 }
 
+.detail-image + .photo-credit {
+  margin-top: calc(var(--space-5) * -1 + var(--space-1));
+}
+
+.photo-credit {
+  border-left: none;
+  padding-left: 0;
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-3);
+}
+
+.photo-credit a {
+  color: var(--color-text-muted);
+}
+
 .detail-body {
   max-width: 70ch;
   display: flex;

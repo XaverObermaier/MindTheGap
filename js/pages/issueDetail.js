@@ -1,8 +1,9 @@
-import { getNewsById, getCategoryMap } from "../services/dataService.js";
+import { getNewsById, getCategoryMap, getImageCredit } from "../services/dataService.js";
 import { getSummary } from "../services/aiService.js";
 import { formatDate } from "../utils/format.js";
 import { qs } from "../utils/dom.js";
 import { HTML_DIR, ROOT } from "../utils/basePath.js";
+import { photoCreditNote } from "../components/photoCredit.js";
 
 async function initIssueDetail() {
   const container = qs("#issue-detail");
@@ -25,10 +26,12 @@ async function initIssueDetail() {
 
     const category = categoryMap.get(item.category);
     const summary = await getSummary(item);
+    const imageCredit = await getImageCredit(item.image);
     document.title = `${item.title} — Mind the Gap`;
 
     container.innerHTML = `
       <div class="detail-image" style="background-image: url('${ROOT}${item.image}')"></div>
+      ${photoCreditNote(imageCredit)}
       <span class="tag tag-primary" style="background:${category?.color || ""}">${category?.label || item.category}</span>
       <h1>${item.title}</h1>
       <div class="card-meta">

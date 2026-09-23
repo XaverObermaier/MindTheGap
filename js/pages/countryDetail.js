@@ -1,4 +1,5 @@
-import { getCountryByCode, getNewsByCountryCode, getCategoryMap } from "../services/dataService.js";
+import { getCountryByCode, getNewsByCountryCode, getCategoryMap, getImageCredit } from "../services/dataService.js";
+import { photoCreditNote } from "../components/photoCredit.js";
 import { newsCard } from "../components/newsCard.js";
 import { needColor, needLabel } from "../utils/needColor.js";
 import { formatCount } from "../utils/format.js";
@@ -26,6 +27,7 @@ async function initCountryDetail() {
     }
 
     document.title = `${country.name} — Mind the Gap`;
+    const imageCredit = await getImageCredit(country.image);
 
     const categoryTags = country.categories
       .map((id) => {
@@ -36,6 +38,7 @@ async function initCountryDetail() {
 
     container.innerHTML = `
       <div class="detail-image" style="background-image: url('${ROOT}${country.image}')"></div>
+      ${photoCreditNote(imageCredit)}
       <div class="card-meta">
         <span class="tag">${country.region}</span>
         <span class="tag" style="background:${needColor(country.needIndex)}">${needLabel(country.needIndex)}</span>

@@ -8,6 +8,7 @@ export const DATA_PATHS = {
   categories: `${ROOT}data/categories.json`,
   organizations: `${ROOT}data/organizations.json`,
   offerTypes: `${ROOT}data/offerTypes.json`,
+  imageCredits: `${ROOT}data/imageCredits.json`,
 };
 
 export const WORLD_GEOJSON_URL =
