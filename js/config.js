@@ -21,4 +21,5 @@ export const PARTIALS = {
 
 export const SITE = {
   name: "Mind the Gap",
+  feedbackEmail: "go93mof@mytum.de",
 };

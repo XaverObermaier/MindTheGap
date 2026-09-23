@@ -8,7 +8,7 @@ export function newsCard(item, categoryMap) {
 
   return `
     <a class="card" href="${HTML_DIR}issue.html?id=${item.id}">
-      <div class="card-image" style="background-image: url('${ROOT}${item.image}')"></div>
+      <div class="card-image" role="img" aria-label="Photo illustrating: ${item.title}" style="background-image: url('${ROOT}${item.image}')"></div>
       <div class="card-body">
         <span class="tag" ${tagStyle}>${categoryLabel}</span>
         <h3>${item.title}</h3>

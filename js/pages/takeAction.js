@@ -62,7 +62,7 @@ function renderOfferBar(offerBar, offerTypes) {
   offerBar.innerHTML = offerTypes
     .map(
       (offer) =>
-        `<button type="button" data-offer="${offer.id}" class="${selectedOffers.has(offer.id) ? "is-active" : ""}">${offer.label}</button>`
+        `<button type="button" data-offer="${offer.id}" class="${selectedOffers.has(offer.id) ? "is-active" : ""}" aria-pressed="${selectedOffers.has(offer.id)}">${offer.label}</button>`
     )
     .join("");
 
@@ -77,6 +77,7 @@ function renderOfferBar(offerBar, offerTypes) {
       selectedOffers.add(offerId);
     }
     button.classList.toggle("is-active");
+    button.setAttribute("aria-pressed", String(selectedOffers.has(offerId)));
     saveOffers();
     renderOrgs(qs("#orgs-grid"));
     updateSupporterButtonState();
@@ -160,6 +161,7 @@ function setupSupporterWidget() {
   function applyState(active) {
     frame.classList.toggle("is-supporter", active);
     toggle.textContent = active ? "You're a Supporter" : "Become a Supporter";
+    toggle.setAttribute("aria-pressed", String(active));
     toggle.disabled = false;
 
     if (!active) {

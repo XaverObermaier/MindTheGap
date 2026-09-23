@@ -1,5 +1,6 @@
 import { qs } from "../utils/dom.js";
 import { getCountries, getImageCredits } from "../services/dataService.js";
+import { SITE } from "../config.js";
 
 const FEEDBACK_KEY = "mtg_feedback";
 
@@ -16,19 +17,20 @@ function initFeedbackForm() {
     const message = messageField.value.trim();
     if (!message) return;
 
-    const entry = {
-      message,
-      contact: contactField.value.trim(),
-      submittedAt: new Date().toISOString(),
-    };
+    const contact = contactField.value.trim();
+    const entry = { message, contact, submittedAt: new Date().toISOString() };
 
     const saved = JSON.parse(localStorage.getItem(FEEDBACK_KEY) || "[]");
     saved.push(entry);
     localStorage.setItem(FEEDBACK_KEY, JSON.stringify(saved));
 
+    const subject = encodeURIComponent("Mind the Gap feedback");
+    const bodyLines = [message, "", contact ? `Contact: ${contact}` : ""].filter(Boolean);
+    const body = encodeURIComponent(bodyLines.join("\n"));
+    window.location.href = `mailto:${SITE.feedbackEmail}?subject=${subject}&body=${body}`;
+
     form.reset();
-    status.textContent =
-      "Thanks — saved on this device for now. This form isn't connected to a live inbox yet, so our team won't see it until that's built.";
+    status.textContent = `Opening your email app to send this to ${SITE.feedbackEmail}. A copy is also saved on this device.`;
   });
 }
 

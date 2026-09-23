@@ -51,15 +51,19 @@ function renderFilterBar(container) {
   container.innerHTML = options
     .map(
       (option) =>
-        `<button type="button" data-category="${option.id}" class="${option.id === "all" ? "is-active" : ""}">${option.label}</button>`
+        `<button type="button" data-category="${option.id}" class="${option.id === "all" ? "is-active" : ""}" aria-pressed="${option.id === "all"}">${option.label}</button>`
     )
     .join("");
 
   container.addEventListener("click", (event) => {
     const button = event.target.closest("button[data-category]");
     if (!button) return;
-    container.querySelectorAll("button").forEach((btn) => btn.classList.remove("is-active"));
+    container.querySelectorAll("button").forEach((btn) => {
+      btn.classList.remove("is-active");
+      btn.setAttribute("aria-pressed", "false");
+    });
     button.classList.add("is-active");
+    button.setAttribute("aria-pressed", "true");
     setActiveCategory(button.dataset.category);
   });
 }
@@ -78,9 +82,11 @@ function renderLegend(catMap) {
 function setupViewToggle(discoverMap) {
   const layout = qs("#discover-layout");
   if (!layout) return;
-  qsa("[data-view-btn]").forEach((button) => {
+  const buttons = qsa("[data-view-btn]");
+  buttons.forEach((button) => {
     button.addEventListener("click", () => {
       layout.dataset.view = button.dataset.viewBtn;
+      buttons.forEach((btn) => btn.setAttribute("aria-pressed", String(btn === button)));
       if (button.dataset.viewBtn === "map") discoverMap.invalidate();
     });
   });

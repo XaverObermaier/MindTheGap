@@ -13,9 +13,10 @@
   <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css">
 </head>
 <body data-page="index">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   <div data-include="header"></div>
 
-  <main>
+  <main id="main-content">
     <section class="hero container">
       <h1>Global inequality, made easier to understand.</h1>
       <p>Mind the Gap turns fragmented news about humanitarian crises and development issues into clear, sourced summaries &mdash; and concrete ways to help.</p>
@@ -35,8 +36,8 @@
         <div class="discover-toolbar">
           <div id="category-filter" class="filter-bar"></div>
           <div class="view-toggle" role="group" aria-label="Switch view">
-            <button type="button" class="btn btn-outline" data-view-btn="map">Map</button>
-            <button type="button" class="btn btn-outline" data-view-btn="list">List</button>
+            <button type="button" class="btn btn-outline" data-view-btn="map" aria-pressed="true">Map</button>
+            <button type="button" class="btn btn-outline" data-view-btn="list" aria-pressed="false">List</button>
           </div>
         </div>
 

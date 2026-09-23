@@ -5,6 +5,24 @@
   padding-inline: var(--space-4);
 }
 
+/* Skip link */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: var(--space-3);
+  background: var(--color-secondary);
+  color: #fff;
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius);
+  z-index: 1000;
+  text-decoration: none;
+  transition: top 0.15s ease;
+}
+
+.skip-link:focus {
+  top: var(--space-3);
+}
+
 /* Header */
 .site-header {
   position: sticky;

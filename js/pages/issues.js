@@ -28,7 +28,7 @@ function renderFilters(filterBar) {
   filterBar.innerHTML = options
     .map(
       (option) =>
-        `<button type="button" data-category="${option.id}" class="${option.id === "all" ? "is-active" : ""}">${option.label}</button>`
+        `<button type="button" data-category="${option.id}" class="${option.id === "all" ? "is-active" : ""}" aria-pressed="${option.id === "all"}">${option.label}</button>`
     )
     .join("");
 
@@ -36,8 +36,12 @@ function renderFilters(filterBar) {
     const button = event.target.closest("button[data-category]");
     if (!button) return;
 
-    filterBar.querySelectorAll("button").forEach((btn) => btn.classList.remove("is-active"));
+    filterBar.querySelectorAll("button").forEach((btn) => {
+      btn.classList.remove("is-active");
+      btn.setAttribute("aria-pressed", "false");
+    });
     button.classList.add("is-active");
+    button.setAttribute("aria-pressed", "true");
 
     const category = button.dataset.category;
     const filtered = category === "all" ? allNews : allNews.filter((item) => item.category === category);
