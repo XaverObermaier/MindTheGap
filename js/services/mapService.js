@@ -6,11 +6,10 @@ import { HTML_DIR } from "../utils/basePath.js";
 export async function createDiscoverMap(elementId, { categoryMap }) {
   const map = L.map(elementId, { minZoom: 2, worldCopyJump: true }).setView([12, 20], 2);
 
-  L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png", {
-    attribution:
-      '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
-    maxZoom: 18,
-    subdomains: "abcd",
+  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+    maxZoom: 19,
+    subdomains: "abc",
   }).addTo(map);
 
   const [countries, news, worldGeoJson] = await Promise.all([
