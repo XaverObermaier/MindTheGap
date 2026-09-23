@@ -22,14 +22,16 @@ async function initTakeAction() {
   const params = new URLSearchParams(window.location.search);
 
   try {
-    const [organizations, categories, offerTypes, countries] = await Promise.all([
+    const [organizations, categories, offerTypes] = await Promise.all([
       getOrganizations(),
       getCategoryMap(),
       getOfferTypes(),
-      params.has("country") ? getCountries() : Promise.resolve([]),
     ]);
 
     categoryMap = categories;
+    const countries = params.has("country") && !categoryMap.has(params.get("category"))
+      ? await getCountries()
+      : [];
     const context = actionContext(params, countries, categoryMap);
     activeCategories = context.categories;
     allOrganizations = organizations;
