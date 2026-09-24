@@ -30,7 +30,7 @@ html/                All other pages (news, issue detail, countries, country det
 css/                 base (tokens/reset), layout, components
 js/
   components/        Reusable render functions (news card, country card)
-  services/          Data fetching (dataService.js), map (mapService.js), AI summary stub (aiService.js)
+  services/          Data fetching (dataService.js) and map (mapService.js)
   pages/             One entry module per page
   state/             Shared filter state (map ↔ news list)
   utils/             Formatting, colors, path helpers
