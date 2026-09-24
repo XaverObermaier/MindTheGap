@@ -17,6 +17,8 @@ Regenerates `data/countries.json` from a mix of:
        *current* crisis described on the site (displaced, or facing
        IPC Crisis-level-or-worse food insecurity, depending on what the
        best available report for that country actually measures).
+         - `EXTERNAL_RECOGNITION`: independently checked recognition by the
+             Norwegian Refugee Council's neglected displacement-crises list.
      - `MANUAL_STATS`: country-specific figures from a national statistics
        office (here: Nigeria's NBS 2022 National MPI report), included at
        the user's request.
@@ -178,6 +180,39 @@ CRISIS_ESTIMATES = {
     },
 }
 
+# Countries ranked in the Norwegian Refugee Council's 2025 neglected
+# displacement-crises list. Missing countries are intentionally absent: an
+# unranked country is unknown, not evidence that its crisis is not neglected.
+EXTERNAL_RECOGNITION = {
+    "SDN": {
+        "source": "Norwegian Refugee Council",
+        "title": "The World's Most Neglected Displacement Crises in 2025",
+        "edition": "10th edition",
+        "scope": "displacement crises",
+        "rank": 1,
+        "url": "https://www.nrc.no/feature/2026/the-worlds-most-neglected-displacement-crises-2025",
+        "checkedAt": "2026-09-16",
+    },
+    "YEM": {
+        "source": "Norwegian Refugee Council",
+        "title": "The World's Most Neglected Displacement Crises in 2025",
+        "edition": "10th edition",
+        "scope": "displacement crises",
+        "rank": 4,
+        "url": "https://www.nrc.no/feature/2026/the-worlds-most-neglected-displacement-crises-2025",
+        "checkedAt": "2026-09-16",
+    },
+    "NGA": {
+        "source": "Norwegian Refugee Council",
+        "title": "The World's Most Neglected Displacement Crises in 2025",
+        "edition": "10th edition",
+        "scope": "displacement crises",
+        "rank": 9,
+        "url": "https://www.nrc.no/feature/2026/the-worlds-most-neglected-displacement-crises-2025",
+        "checkedAt": "2026-09-16",
+    },
+}
+
 # Country-specific statistics published by a national statistics office
 # rather than a global database. Added at the user's request for Nigeria's
 # NBS. NBS does not currently expose these figures through a public,
@@ -328,8 +363,7 @@ def build_countries() -> list[dict]:
         if code in MANUAL_STATS:
             indicators["nationalStat"] = MANUAL_STATS[code]
 
-        countries.append(
-            {
+        country = {
                 "code": code,
                 "name": profile["name"],
                 "region": profile["region"],
@@ -340,8 +374,10 @@ def build_countries() -> list[dict]:
                 "image": profile["image"],
                 "indicators": indicators,
                 "dataFetchedAt": fetched_at,
-            }
-        )
+        }
+        if code in EXTERNAL_RECOGNITION:
+            country["externalRecognition"] = dict(EXTERNAL_RECOGNITION[code])
+        countries.append(country)
 
     return countries
 

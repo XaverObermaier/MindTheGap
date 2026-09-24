@@ -47,9 +47,13 @@
       }
     },
     "externalRecognition": {
-      "source": "Norwegian Refugee Council — The World's Most Neglected Displacement Crises in 2025 (10th edition)",
+      "source": "Norwegian Refugee Council",
+      "title": "The World's Most Neglected Displacement Crises in 2025",
+      "edition": "10th edition",
+      "scope": "displacement crises",
       "rank": 1,
-      "url": "https://www.nrc.no/feature/2026/the-worlds-most-neglected-displacement-crises-2025"
+      "url": "https://www.nrc.no/feature/2026/the-worlds-most-neglected-displacement-crises-2025",
+      "checkedAt": "2026-09-16"
     },
     "dataFetchedAt": "2026-09-16T11:01:47+00:00"
   },
@@ -151,9 +155,13 @@
       }
     },
     "externalRecognition": {
-      "source": "Norwegian Refugee Council \u2014 The World's Most Neglected Displacement Crises in 2025 (10th edition)",
+      "source": "Norwegian Refugee Council",
+      "title": "The World's Most Neglected Displacement Crises in 2025",
+      "edition": "10th edition",
+      "scope": "displacement crises",
       "rank": 4,
-      "url": "https://www.nrc.no/feature/2026/the-worlds-most-neglected-displacement-crises-2025"
+      "url": "https://www.nrc.no/feature/2026/the-worlds-most-neglected-displacement-crises-2025",
+      "checkedAt": "2026-09-16"
     },
     "dataFetchedAt": "2026-09-16T11:01:47+00:00"
   },
@@ -264,9 +272,13 @@
       }
     },
     "externalRecognition": {
-      "source": "Norwegian Refugee Council — The World's Most Neglected Displacement Crises in 2025 (10th edition)",
+      "source": "Norwegian Refugee Council",
+      "title": "The World's Most Neglected Displacement Crises in 2025",
+      "edition": "10th edition",
+      "scope": "displacement crises",
       "rank": 9,
-      "url": "https://www.nrc.no/feature/2026/the-worlds-most-neglected-displacement-crises-2025"
+      "url": "https://www.nrc.no/feature/2026/the-worlds-most-neglected-displacement-crises-2025",
+      "checkedAt": "2026-09-16"
     },
     "dataFetchedAt": "2026-09-16T11:01:47+00:00"
   }

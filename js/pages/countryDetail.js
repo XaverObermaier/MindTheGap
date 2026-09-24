@@ -1,6 +1,7 @@
 import { getCountryByCode, getNewsByCountryCode, getCategoryMap, getImageCredit } from "../services/dataService.js";
 import { photoCreditNote } from "../components/photoCredit.js";
 import { newsCard } from "../components/newsCard.js";
+import { attentionGap } from "../components/attentionGap.js";
 import { needColor, needLabel } from "../utils/needColor.js";
 import { formatCount } from "../utils/format.js";
 import { qs } from "../utils/dom.js";
@@ -43,13 +44,13 @@ async function initCountryDetail() {
         <span class="tag">${country.region}</span>
         <span class="tag" style="background:${needColor(country.needIndex)}">${needLabel(country.needIndex)}</span>
         <a class="need-info-link" href="${HTML_DIR}about.html#need-index-methodology">How this is calculated</a>
-        ${renderExternalRecognition(country.externalRecognition)}
       </div>
       <h1>${country.name}</h1>
       <div class="card-meta"><span>Population: ${country.population}</span></div>
       <div class="detail-body">
         <p>${country.summary}</p>
         <div>${categoryTags}</div>
+        ${attentionGap(country.externalRecognition)}
         ${renderIndicators(country.indicators)}
         <a class="btn btn-primary" href="${HTML_DIR}take-action.html?country=${encodeURIComponent(country.code)}">See ways to help</a>
       </div>
@@ -65,15 +66,6 @@ async function initCountryDetail() {
     container.innerHTML = `<p class="state-message">Could not load this country right now.</p>`;
     console.error(error);
   }
-}
-
-function renderExternalRecognition(externalRecognition) {
-  if (!externalRecognition) return "";
-  return `
-    <a class="tag tag-recognition" href="${externalRecognition.url}" target="_blank" rel="noopener">
-      Ranked #${externalRecognition.rank} most neglected displacement crisis &mdash; NRC 2025
-    </a>
-  `;
 }
 
 function renderIndicators(indicators) {
