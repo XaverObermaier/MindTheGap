@@ -27,55 +27,63 @@ function initFeedbackForm() {
   const form = qs("#feedback-form");
   const status = qs("#feedback-status");
   const submitBtn = qs("#feedback-submit");
-  const nextField = qs("#feedback-next");
   if (!form) return;
 
   updateLimitState();
-  showThankYouIfRedirected();
 
-  form.addEventListener("submit", (event) => {
+  form.addEventListener("submit", async (event) => {
+    event.preventDefault();
+
     if (recentSendTimestamps().length >= DAILY_LIMIT) {
-      event.preventDefault();
       updateLimitState();
       return;
     }
 
     const messageField = qs("#feedback-message");
     const contactField = qs("#feedback-contact");
-    const entry = {
-      message: messageField.value.trim(),
-      contact: contactField.value.trim(),
-      submittedAt: new Date().toISOString(),
-    };
-    const saved = JSON.parse(localStorage.getItem(FEEDBACK_KEY) || "[]");
-    saved.push(entry);
-    localStorage.setItem(FEEDBACK_KEY, JSON.stringify(saved));
+    const message = messageField.value.trim();
+    const contact = contactField.value.trim();
+    if (!message) return;
 
-    const redirectUrl = new URL(window.location.href);
-    redirectUrl.searchParams.set("sent", "true");
-    nextField.value = redirectUrl.toString();
+    submitBtn.disabled = true;
+    status.textContent = "Sending...";
 
-    recordSend();
-    updateLimitState();
-    // No preventDefault here — the form submits for real, POSTing to FormSubmit.
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          access_key: SITE.web3FormsAccessKey,
+          subject: "Mind the Gap feedback",
+          message,
+          contact: contact || "Not provided",
+        }),
+      });
+      const result = await response.json();
+
+      if (!result.success) throw new Error(result.message || "Send failed");
+
+      const saved = JSON.parse(localStorage.getItem(FEEDBACK_KEY) || "[]");
+      saved.push({ message, contact, submittedAt: new Date().toISOString() });
+      localStorage.setItem(FEEDBACK_KEY, JSON.stringify(saved));
+
+      recordSend();
+      form.reset();
+      status.textContent = `Thanks — sent to ${SITE.feedbackEmail}.`;
+    } catch (error) {
+      status.textContent = "Couldn't send that right now — please try again in a moment.";
+      console.error(error);
+    } finally {
+      updateLimitState();
+    }
   });
 
   function updateLimitState() {
     const remaining = DAILY_LIMIT - recentSendTimestamps().length;
     submitBtn.disabled = remaining <= 0;
-    if (remaining <= 0 && status) {
+    if (remaining <= 0) {
       status.textContent = `You've reached the limit of ${DAILY_LIMIT} messages per 24 hours on this device. Please try again later.`;
     }
-  }
-
-  function showThankYouIfRedirected() {
-    const params = new URLSearchParams(window.location.search);
-    if (params.get("sent") !== "true") return;
-
-    if (status) status.textContent = "Thanks — your message was sent.";
-    params.delete("sent");
-    const cleanUrl = `${window.location.pathname}${params.toString() ? `?${params}` : ""}${window.location.hash}`;
-    window.history.replaceState({}, "", cleanUrl);
   }
 }
 
