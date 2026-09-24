@@ -22,4 +22,7 @@ export const PARTIALS = {
 export const SITE = {
   name: "Mind the Gap",
   feedbackEmail: "go93mof@mytum.de",
+  // Web3Forms access keys are meant to be public/client-side — not a secret,
+  // same as how the other free-tier API usage on this site works.
+  web3FormsAccessKey: "34508df1-a51f-421f-85b2-ff80dec3e849",
 };
