@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import test from 'node:test';
+import { rankRelatedIssues } from '../js/services/dataService.js';
 import { actionContext, rankOrganizations } from '../js/utils/actionMatching.js';
 
 const load = async (name) => JSON.parse(await readFile(new URL(`../data/${name}.json`, import.meta.url)));
@@ -45,4 +46,11 @@ test('general and category links retain existing offer-based recommendations', (
   assert.equal(rankOrganizations(organizations, [], new Set(['translation']))[0].id, 'unhcr');
   assert.equal(rankOrganizations(organizations, ['health'], new Set(['medical']))[0].id, 'who');
   assert.deepEqual(rankOrganizations([], ['war'], new Set()), []);
+});
+
+test('issue detail pages surface relevant related stories without repeating the current issue', async () => {
+  const news = await load('news');
+  const related = rankRelatedIssues(news, { id: 1, countryCode: 'SDN', category: 'hunger' }, 2);
+  assert.deepEqual(related.map((item) => item.id), [2, 5]);
+  assert.ok(related.every((item) => item.id !== 1));
 });

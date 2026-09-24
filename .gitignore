@@ -1,2 +1,5 @@
 __pycache__/
 *.pyc
+local.settings.json
+node_modules/
+.azure/

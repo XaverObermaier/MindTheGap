@@ -230,6 +230,34 @@
   gap: var(--space-4);
 }
 
+.related-stories {
+  max-width: 70ch;
+  margin-top: var(--space-6);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-border);
+}
+
+.related-stories h2 {
+  margin-bottom: var(--space-3);
+  color: var(--color-secondary);
+  font-size: 1.25rem;
+}
+
+.related-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding-left: 1.2em;
+}
+
+.related-list a {
+  color: var(--color-primary);
+}
+
+.related-list a:hover {
+  color: var(--color-primary-dark);
+}
+
 /* About has no supporting image to anchor the width visually, so give it
    a bit more breathing room on wide screens than the default reading column. */
 [data-page="about"] .detail-body {

@@ -1,4 +1,8 @@
 function isNestedPage() {
+  if (typeof window === "undefined") {
+    return false;
+  }
+
   const segments = window.location.pathname.split("/").filter(Boolean);
   return segments.length > 1 && segments[segments.length - 2] === "html";
 }
