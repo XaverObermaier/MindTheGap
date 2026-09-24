@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Media Literacy — Mind the Gap</title>
+  <link rel="icon" type="image/jpeg" href="../assets/icons/logo-mark.jpeg">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <style>
+    /* Page-specific additions only — nothing here overrides shared component classes. */
+    .lang-switch {
+      display: flex;
+      gap: var(--space-2);
+      margin-bottom: var(--space-5);
+    }
+    .lang-switch button.is-active {
+      background: var(--color-secondary);
+      border-color: var(--color-secondary);
+      color: #fff;
+    }
+    .signal-card {
+      display: flex;
+      gap: var(--space-3);
+      align-items: flex-start;
+    }
+    .signal-num {
+      flex-shrink: 0;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--color-secondary);
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.8rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .checklist {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-2);
+    }
+    .checklist .card-body {
+      flex-direction: row;
+      align-items: flex-start;
+      gap: var(--space-3);
+    }
+    .check-mark {
+      flex-shrink: 0;
+      width: 20px;
+      height: 20px;
+      margin-top: 2px;
+      border-radius: 5px;
+      border: 2px solid var(--color-primary);
+    }
+    .why-callout {
+      border-left: 4px solid var(--color-primary);
+      background: var(--color-bg-alt);
+      border-radius: var(--radius);
+      padding: var(--space-4);
+      color: var(--color-text-muted);
+    }
+    .sources-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-2);
+    }
+  </style>
+</head>
+<body data-page="media-literacy">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div data-include="header"></div>
+
+  <main id="main-content">
+    <section class="section">
+      <div class="container">
+        <div class="lang-switch" id="langSwitch"></div>
+        <div class="section-header">
+          <h1 id="pageTitle"></h1>
+          <p id="pageSubtitle"></p>
+        </div>
+        <div class="why-callout" id="whyBox"></div>
+      </div>
+    </section>
+
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-header">
+          <h2 id="signalsHeading"></h2>
+        </div>
+        <div class="card-grid" id="signalsGrid"></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2 id="checklistHeading"></h2>
+        </div>
+        <div class="checklist" id="checklistList"></div>
+      </div>
+    </section>
+
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-header">
+          <h2 id="sourcesHeading"></h2>
+        </div>
+        <div class="sources-row" id="sourcesRow"></div>
+      </div>
+    </section>
+  </main>
+
+  <div data-include="footer"></div>
+
+  <script type="module" src="../js/main.js"></script>
+  <script type="module" src="../js/pages/mediaLiteracy.js"></script>
+</body>
+</html>
