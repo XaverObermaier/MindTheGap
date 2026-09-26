@@ -53,11 +53,114 @@
         </div>
       </div>
     </section>
+    <section class="section section-alt" id="ai-tools">
+  <div class="container">
+    <div class="section-header">
+      <h2>AI-powered tools</h2>
+      <p>Four focused tools, each with a clear line on what it does — and deliberately doesn't — do. Try them directly below.</p>
+    </div>
+
+    <!-- NEWS CHECK -->
+    <div class="card" style="margin-bottom: var(--space-6);">
+      <div class="card-body">
+        <span class="tag">Rule-based pattern checker</span>
+        <h3>News Check</h3>
+        <p>Paste a news article or claim below. This runs entirely in your browser and checks for common misinformation patterns — it does not verify facts, and a full AI-assisted version would need a backend we don't have on this static site yet.</p>
+
+        <textarea id="nc-input" rows="5" style="width:100%; padding: var(--space-2); border: 1px solid var(--color-border); border-radius: var(--radius); font: inherit; resize: vertical;" placeholder="Paste the text of a news article, post, or claim here..."></textarea>
+        <button type="button" class="btn btn-primary" id="nc-check-btn" style="margin-top: var(--space-2); align-self: flex-start;">Check for warning signs</button>
+        <p class="state-message" id="nc-error" hidden></p>
+
+        <div class="card" id="nc-result" hidden style="margin-top: var(--space-3);">
+          <div class="card-body">
+            <span class="tag" id="nc-badge" style="color:#fff;"></span>
+            <ul id="nc-signals"></ul>
+          </div>
+        </div>
+
+        <div class="attention-gap">
+          <p><strong>Won't:</strong> declare a claim true or false. It only flags patterns — you still decide, and can check the primary source.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- MENTOR MATCHING -->
+    <div class="card" style="margin-bottom: var(--space-6);">
+      <div class="card-body">
+        <span class="tag">Rule-based today</span>
+        <h3>Mentor Matching</h3>
+        <p>Select an area of interest, and we'll match you to the closest-fit mentor in our current network — a transparent, rule-based lookup, not a black-box model, while our mentor pool is still small.</p>
+
+        <div id="mm-pills" class="filter-bar"></div>
+
+        <div style="display:flex; flex-direction: column; gap: var(--space-2); max-width: 40ch;">
+          <label for="mm-name" style="font-weight:600; font-size:0.9rem;">Name</label>
+          <input type="text" id="mm-name" style="padding: var(--space-2); border: 1px solid var(--color-border); border-radius: var(--radius); font: inherit;">
+          <label for="mm-email" style="font-weight:600; font-size:0.9rem;">Email</label>
+          <input type="email" id="mm-email" style="padding: var(--space-2); border: 1px solid var(--color-border); border-radius: var(--radius); font: inherit;">
+        </div>
+        <button type="button" class="btn btn-primary" id="mm-find-btn" style="margin-top: var(--space-2); align-self: flex-start;">Find my mentor</button>
+        <p class="state-message" id="mm-error" hidden></p>
+
+        <div id="mm-fallback-note"></div>
+        <div class="card" id="mm-result" hidden style="margin-top: var(--space-3);">
+          <div class="card-body">
+            <span class="tag tag-primary" id="mm-mentor-tag"></span>
+            <h3 id="mm-mentor-name"></h3>
+            <p id="mm-mentor-bio"></p>
+            <button type="button" class="btn btn-outline" id="mm-email-btn" style="align-self:flex-start;">Email us the request</button>
+          </div>
+        </div>
+
+        <div class="attention-gap">
+          <p><strong>Won't:</strong> auto-send an introduction on its own — clicking through opens a pre-filled email to our team, who confirm every match before connecting you.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- INTEREST CLUSTERING -->
+    <div class="card" style="margin-bottom: var(--space-6);">
+      <div class="card-body">
+        <span class="tag tag-primary">Planned — preview only</span>
+        <h3>Interest Clustering</h3>
+        <p>As more people join, we want to group users by shared interest so people who care about the same issue can find each other. Select topics below to preview how it would work — nothing is saved, and no group is created.</p>
+
+        <div id="ic-pills" class="filter-bar"></div>
+        <button type="button" class="btn btn-primary" id="ic-preview-btn" style="align-self: flex-start;">Preview my cluster</button>
+        <p class="state-message" id="ic-error" hidden></p>
+
+        <div class="card" id="ic-result" hidden style="margin-top: var(--space-3);">
+          <div class="card-body">
+            <span class="tag" id="ic-result-tag"></span>
+            <h3 id="ic-result-title"></h3>
+            <p id="ic-result-desc"></p>
+          </div>
+        </div>
+
+        <div class="attention-gap">
+          <p><strong>Won't:</strong> add anyone to a group without opting in, or reveal who else is in a group before someone joins.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- MEDIA LITERACY (link-out) -->
+    <div class="card">
+      <div class="card-body">
+        <span class="tag">Guide</span>
+        <h3>Media Literacy</h3>
+        <p>Want the full guide on spotting misinformation about global inequality and humanitarian crises — available in English, Spanish and German?</p>
+        <a href="media-literacy.html" class="btn btn-outline" style="align-self:flex-start;">Read the guide</a>
+      </div>
+    </div>
+
+  </div>
+</section>
   </main>
 
   <div data-include="footer"></div>
 
   <script type="module" src="../js/main.js"></script>
   <script type="module" src="../js/pages/takeAction.js"></script>
+  <script type="module" src="../js/aiTools.js"></script>
 </body>
 </html>
