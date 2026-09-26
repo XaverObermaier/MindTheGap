@@ -17,6 +17,44 @@ function makeExternalLink(url, label) {
   return anchor;
 }
 
+function loadInstagramEmbedScript() {
+  if (window.instgrm) {
+    window.instgrm.Embeds.process();
+    return;
+  }
+  if (document.querySelector('script[src*="instagram.com/embed.js"]')) return;
+
+  const script = document.createElement("script");
+  script.async = true;
+  script.src = "https://www.instagram.com/embed.js";
+  document.body.append(script);
+}
+
+function renderInstagramSection(instagram) {
+  if (!instagram) return null;
+
+  const section = document.createElement("section");
+  section.className = "instagram-embed-section";
+
+  const heading = document.createElement("h2");
+  setText(heading, "From AIDUCATE's Instagram");
+
+  const intro = document.createElement("p");
+  intro.className = "source-note";
+  intro.append(document.createTextNode("Our coalition partner shares their design work and updates on Instagram as "));
+  intro.append(makeExternalLink(instagram.url, instagram.handle));
+  intro.append(document.createTextNode("."));
+
+  const blockquote = document.createElement("blockquote");
+  blockquote.className = "instagram-media";
+  blockquote.setAttribute("data-instgrm-permalink", instagram.postUrl);
+  blockquote.setAttribute("data-instgrm-version", "14");
+
+  section.append(heading, intro, blockquote);
+  loadInstagramEmbedScript();
+  return section;
+}
+
 function renderRelatedStories(item, related) {
   if (!related || !related.length) return null;
 
@@ -99,6 +137,9 @@ function renderIssueContent(item, category, summary, imageCredit, related) {
 
   body.append(summaryText, source, action);
   container.append(image, photoNote, tag, heading, meta, body);
+
+  const instagramSection = renderInstagramSection(item.instagram);
+  if (instagramSection) container.append(instagramSection);
 
   const relatedSection = renderRelatedStories(item, related);
   if (relatedSection) container.append(relatedSection);

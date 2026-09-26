@@ -81,6 +81,11 @@
     "date": "2026-09-26",
     "image": "assets/images/gaza.jpg",
     "source": "UNICEF",
-    "sourceUrl": "https://www.unicef.org/press-releases/rebuilding-hope-unicef-expands-back-learning-hundreds-thousands-children-gaza"
+    "sourceUrl": "https://www.unicef.org/press-releases/rebuilding-hope-unicef-expands-back-learning-hundreds-thousands-children-gaza",
+    "instagram": {
+      "handle": "@_aiducate_",
+      "url": "https://www.instagram.com/_aiducate_/",
+      "postUrl": "https://www.instagram.com/_aiducate_/p/Dci2HrHjfYM/"
+    }
   }
 ]

@@ -264,6 +264,23 @@
   max-width: 95ch;
 }
 
+.instagram-embed-section {
+  max-width: 70ch;
+  margin-top: var(--space-6);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-border);
+}
+
+.instagram-embed-section h2 {
+  margin-bottom: var(--space-3);
+  color: var(--color-secondary);
+  font-size: 1.25rem;
+}
+
+.instagram-embed-section iframe.instagram-media {
+  max-width: 100%;
+}
+
 .detail-body ul {
   list-style: disc;
   padding-left: 1.4em;
