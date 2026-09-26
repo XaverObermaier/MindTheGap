@@ -68,5 +68,19 @@
     "image": "assets/images/yemen.jpg",
     "source": "World Food Programme",
     "sourceUrl": "https://www.wfp.org/news/nearly-half-population-government-controlled-areas-yemen-face-acute-food-insecurity"
+  },
+  {
+    "id": 6,
+    "title": "Meet AIDUCATE: our coalition partner building an offline AI assistant for Gaza's teachers",
+    "category": "education",
+    "country": "Gaza",
+    "countryCode": "PSE",
+    "lat": 31.5,
+    "lng": 34.45,
+    "summary": "Children in Gaza have missed nearly three years of formal schooling, and UNICEF says 98% of the territory's school buildings have been damaged or destroyed, leaving many classes to meet in tents with children of different ages and levels grouped together. AIDUCATE, a fellow student team we've formed an awareness coalition with, is proposing an offline AI assistant that helps local teachers, who are trained but under-resourced, prepare curriculum-based lesson plans and activities for those mixed-level classrooms. The teacher still leads and decides everything in the classroom; the tool only assists with lesson preparation, needs no internet connection, stores no children's names, and is designed to never interact with children directly.",
+    "date": "2026-09-26",
+    "image": "assets/images/gaza.jpg",
+    "source": "UNICEF",
+    "sourceUrl": "https://www.unicef.org/press-releases/rebuilding-hope-unicef-expands-back-learning-hundreds-thousands-children-gaza"
   }
 ]
