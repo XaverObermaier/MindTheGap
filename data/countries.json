@@ -281,5 +281,50 @@
       "checkedAt": "2026-09-16"
     },
     "dataFetchedAt": "2026-09-16T11:01:47+00:00"
+  },
+  {
+    "code": "PSE",
+    "name": "Gaza",
+    "region": "Middle East",
+    "population": "5.4 million (World Bank reports \"West Bank and Gaza\" as one combined territory, not Gaza alone)",
+    "needIndex": null,
+    "categories": [
+      "war",
+      "hunger",
+      "education"
+    ],
+    "summary": "Nearly three years of war have displaced most of Gaza's population and left the majority of school buildings damaged or destroyed. This profile intentionally shows no need score — see \"How this is calculated\" above for why.",
+    "image": "assets/images/gaza.jpg",
+    "indicators": {
+      "population": {
+        "value": 5413596,
+        "year": "2025",
+        "label": "Population, West Bank and Gaza (combined; not broken out by territory)",
+        "source": "World Bank Open Data (SP.POP.TOTL)",
+        "sourceUrl": "https://data.worldbank.org/indicator/SP.POP.TOTL?locations=PS"
+      },
+      "giniIndex": {
+        "value": 36.4,
+        "year": "2023",
+        "source": "World Bank Open Data (SI.POV.GINI)",
+        "sourceUrl": "https://data.worldbank.org/indicator/SI.POV.GINI?locations=PS"
+      },
+      "povertyRate3": {
+        "value": 2.1,
+        "year": "2023",
+        "label": "Poverty headcount ratio at $3.00/day (2021 PPP)",
+        "source": "World Bank Open Data (SI.POV.DDAY)",
+        "sourceUrl": "https://data.worldbank.org/indicator/SI.POV.DDAY?locations=PS",
+        "note": "Latest published figure predates the current war and does not reflect conditions in Gaza today — the same structural-indicators-lag problem described in About."
+      },
+      "undernourishment": {
+        "value": null,
+        "year": null,
+        "label": "Prevalence of undernourishment",
+        "source": "World Bank Open Data (SN.ITK.DEFC.ZS)",
+        "sourceUrl": "https://data.worldbank.org/indicator/SN.ITK.DEFC.ZS?locations=PS"
+      }
+    },
+    "dataFetchedAt": "2026-09-26T00:00:00+00:00"
   }
 ]
