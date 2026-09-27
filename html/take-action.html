@@ -57,11 +57,18 @@
   <div class="container">
     <div class="section-header">
       <h2>AI-powered tools</h2>
-      <p>Four focused tools, each with a clear line on what it does — and deliberately doesn't — do. Try them directly below.</p>
+      <p>Four focused tools, each with a clear line on what it does — and deliberately doesn't — do. Pick one to try.</p>
+    </div>
+
+    <div id="ai-tools-switch" class="filter-bar">
+      <button type="button" data-tool-tab="news-check" class="is-active" aria-pressed="true">News Check</button>
+      <button type="button" data-tool-tab="mentor-matching" aria-pressed="false">Mentor Matching</button>
+      <button type="button" data-tool-tab="interest-clustering" aria-pressed="false">Interest Clustering</button>
+      <button type="button" data-tool-tab="media-literacy" aria-pressed="false">Media Literacy</button>
     </div>
 
     <!-- NEWS CHECK -->
-    <div class="card" style="margin-bottom: var(--space-6);">
+    <div class="card" data-tool-panel="news-check">
       <div class="card-body">
         <span class="tag">Rule-based pattern checker</span>
         <h3>News Check</h3>
@@ -85,7 +92,7 @@
     </div>
 
     <!-- MENTOR MATCHING -->
-    <div class="card" style="margin-bottom: var(--space-6);">
+    <div class="card" data-tool-panel="mentor-matching" hidden>
       <div class="card-body">
         <span class="tag">Rule-based today</span>
         <h3>Mentor Matching</h3>
@@ -119,7 +126,7 @@
     </div>
 
     <!-- INTEREST CLUSTERING -->
-    <div class="card" style="margin-bottom: var(--space-6);">
+    <div class="card" data-tool-panel="interest-clustering" hidden>
       <div class="card-body">
         <span class="tag tag-primary">Planned — preview only</span>
         <h3>Interest Clustering</h3>
@@ -144,7 +151,7 @@
     </div>
 
     <!-- MEDIA LITERACY (link-out) -->
-    <div class="card">
+    <div class="card" data-tool-panel="media-literacy" hidden>
       <div class="card-body">
         <span class="tag">Guide</span>
         <h3>Media Literacy</h3>
