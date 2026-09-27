@@ -5,6 +5,12 @@
   box-sizing: border-box;
 }
 
+/* Component classes like .card set their own `display`, which otherwise wins
+   over the UA stylesheet's [hidden] rule at equal specificity. */
+[hidden] {
+  display: none !important;
+}
+
 body,
 h1,
 h2,

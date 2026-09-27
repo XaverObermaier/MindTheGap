@@ -4,6 +4,32 @@
 // (rule-based lookup + mailto request), and Interest Clustering (demo preview).
 // Nothing here calls any external API or stores any data.
 
+/* ============ TOOL SWITCHER ============ */
+// Shows one tool panel at a time so the section reads as a single choice
+// instead of four fully-expanded features stacked in a row.
+(function toolSwitcher() {
+  const switchBar = document.getElementById("ai-tools-switch");
+  if (!switchBar) return;
+
+  const buttons = [...switchBar.querySelectorAll("button[data-tool-tab]")];
+  const panels = [...document.querySelectorAll("[data-tool-panel]")];
+
+  switchBar.addEventListener("click", (event) => {
+    const button = event.target.closest("button[data-tool-tab]");
+    if (!button) return;
+
+    const tool = button.dataset.toolTab;
+    buttons.forEach(b => {
+      const active = b === button;
+      b.classList.toggle("is-active", active);
+      b.setAttribute("aria-pressed", String(active));
+    });
+    panels.forEach(p => {
+      p.hidden = p.dataset.toolPanel !== tool;
+    });
+  });
+})();
+
 /* ============ NEWS CHECK ============ */
 (function newsCheck() {
   const btn = document.getElementById("nc-check-btn");
